@@ -1,5 +1,4 @@
 from fastapi import HTTPException,FastAPI,Depends,Request
-from sqlalchemy.orm import Session
 from src.utills.db import db_init,Base
 from src.User.router import userrouter
 from src.courses.router import courserouter
@@ -8,11 +7,23 @@ from src.batch.router import batchrouter
 from src.students.router import studentrouter
 from src.enroll.router import enrollrouter
 from src.genAI.router import genairouter
-
+from fastapi.middleware.cors import CORSMiddleware
 
 Base.metadata.create_all(db_init)
 
 app=FastAPI()
+
+origins = [
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,   # or ["*"] for testing
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(userrouter,prefix="/users",tags=["Users"])
 app.include_router(courserouter,prefix="/courses",tags=["Courses"])

@@ -18,11 +18,11 @@ from src.utills.email_config import (
 
 conf = ConnectionConfig(
     MAIL_USERNAME = "choudharyayush290@gmail.com",
-    MAIL_PASSWORD = "xtzw qozc iart diaa",
+    MAIL_PASSWORD = "locl sowj nuje sjxz",
     MAIL_FROM = "choudharyayush290@gmail.com",
     MAIL_PORT = 587,
     MAIL_SERVER = "smtp.gmail.com",
-    MAIL_FROM_NAME="ayushjichoudhary270@gmail.com",
+    MAIL_FROM_NAME="TechSimPlus Learning",
     MAIL_STARTTLS = True,
     MAIL_SSL_TLS = False,
     USE_CREDENTIALS = True,
